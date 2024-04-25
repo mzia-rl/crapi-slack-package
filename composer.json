@@ -1,0 +1,47 @@
+{
+    "name": "canzell/crapi-slack-package",
+    "description": "Slack notification for Laravel as it should be.",
+    "type": "library",
+	"version": 1.0,
+    "authors": [
+        {
+            "name": "Pravin Gadekar",
+            "email": "web4@canzell.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.3",
+        "guzzlehttp/guzzle": "^6.3 || ^7.0",
+        "illuminate/notifications": "^5.8 || ^6.0 || ^7.0 || ^8.0",
+        "illuminate/support": "^5.8 || ^6.0 || ^7.0 || ^8.0",
+        "laravel/slack-notification-channel": "^2.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "*",
+        "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Canzell\\LaravelSlack\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --colors=always"
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Canzell\\LaravelSlack\\ServiceProvider"
+            ],
+            "aliases": {
+                "Slack": "Canzell\\LaravelSlack\\Facades\\Slack"
+            }
+        }
+    }
+}

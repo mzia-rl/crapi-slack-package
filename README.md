@@ -1,0 +1,1 @@
+Laravel integration for the Slack, including facades and service providers.
